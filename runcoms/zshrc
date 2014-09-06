@@ -12,3 +12,26 @@ fi
 
 # Customize to your needs...
 
+# npm
+if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
+  source "$HOME/.nvm/nvm.sh"
+fi
+
+# chruby
+
+if (( $+commands[chruby-exec] )); then
+  source "${commands[chruby-exec]:h:h}/share/chruby/chruby.sh"
+  chruby 2.1
+fi
+
+# OS X
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  # OS X-specific aliases
+  alias find="$BREW_PREFIX/bin/gfind"
+  alias xargs="$BREW_PREFIX/bin/gxargs"
+
+  PG_DIR="$BREW_PREFIX/var/postgres"
+  alias pg_start="pg_ctl -D $PG_DIR -l $PG_DIR/server.log start"
+  alias pg_stop="pg_ctl -D $PG_DIR stop -s -m fast"
+fi

@@ -33,32 +33,28 @@ fi
 # Paths
 #
 
+export GOPATH="$HOME/Projects/go"
+export BREW_PREFIX=$(brew --prefix)
+
 # Ensure path arrays do not contain duplicates.
-typeset -gU cdpath fpath mailpath path
+typeset -gU cdpath fpath mailpath manpath path
 
 # Set the the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
-
-export GOPATH="$HOME/Projects/go"
-homebrew=$(brew --prefix)
-
-# Set the list of directories that man searches for manuals.
-manpath=(
-  $homebrew/opt/coreutils/libexec/gnuman
-  $manpath
+cdpath=(
+  $HOME/Projects
+  $cdpath
 )
 
-for path_file in /etc/manpaths.d/*(.N); do
-  manpath+=($(<$path_file))
-done
-unset path_file
+# manpath=(
+#   $homebrew/opt/coreutils/libexec/gnuman
+#   $manpath
+# )
+export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Set the list of directories that Zsh searches for programs.
 path=(
   $GOPATH/bin
-  $homebrew/opt/coreutils/libexec/gnubin
+  $BREW_PREFIX/opt/coreutils/libexec/gnubin
   $HOME/.cabal/bin
   /usr/local/{bin,sbin}
   $path

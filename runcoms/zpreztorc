@@ -32,12 +32,15 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt' \
-  'fasd' \
-  'osx' \
   'git' \
+  'archive' \
+  'fasd' \
+  'tmux' \
+  'osx' \
   'python' \
-  'node'
+  'history-substring-search' \
+  'prompt'
+
 #
 # Editor
 #
@@ -139,7 +142,7 @@ zstyle ':prezto:module:prompt' theme 'ryan'
 #
 
 # Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
 # zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
