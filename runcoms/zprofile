@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='emacs'
+export VISUAL='emacs'
 export PAGER='less'
 
 #
@@ -26,7 +26,7 @@ export PAGER='less'
 #
 
 if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
+  export LANG='en_GB.UTF-8'
 fi
 
 #
@@ -41,8 +41,25 @@ typeset -gU cdpath fpath mailpath path
 #   $cdpath
 # )
 
+export GOPATH="$HOME/Projects/go"
+homebrew=$(brew --prefix)
+
+# Set the list of directories that man searches for manuals.
+manpath=(
+  $homebrew/opt/coreutils/libexec/gnuman
+  $manpath
+)
+
+for path_file in /etc/manpaths.d/*(.N); do
+  manpath+=($(<$path_file))
+done
+unset path_file
+
 # Set the list of directories that Zsh searches for programs.
 path=(
+  $GOPATH/bin
+  $homebrew/opt/coreutils/libexec/gnubin
+  $HOME/.cabal/bin
   /usr/local/{bin,sbin}
   $path
 )
@@ -74,4 +91,3 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
-
