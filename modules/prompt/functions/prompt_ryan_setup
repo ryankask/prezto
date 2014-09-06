@@ -69,12 +69,13 @@ function prompt_ryan_setup {
 
   local hist_num="%B%F{yellow}[%F{green}%h%F{yellow}]%f%b"
   local user_sys_info="%B%F{blue}%n%F{yellow}@%F{blue}%m%f%b"
+  local time_stamp="%B%F{yellow}[%b%F{red}%*%B%F{yellow}]%f%b"
   local cwd_path="%B%F{yellow}[ %F{blue}%~%f%F{yellow} ]%f%b"
   local main_prompt="%B%(?.%F{green}.%F{red})$%f%b"
 
   # Define prompts.
   PROMPT="
-${hist_num} ${user_sys_info} "'${vcs_info_msg_0_}'" "'$python_info[virtualenv]'"
+${hist_num} ${user_sys_info} ${time_stamp} "'${vcs_info_msg_0_}'" "'$python_info[virtualenv]'"
 ${cwd_path}
 ${main_prompt} "
   RPROMPT=''
