@@ -37,19 +37,13 @@ export GOPATH="$HOME/Projects/go"
 export BREW_PREFIX=$(brew --prefix)
 
 # Ensure path arrays do not contain duplicates.
-typeset -gU cdpath fpath mailpath manpath path
+typeset -gU cdpath fpath mailpath path
 
 # Set the the list of directories that cd searches.
 cdpath=(
   $HOME/Projects
   $cdpath
 )
-
-# manpath=(
-#   $homebrew/opt/coreutils/libexec/gnuman
-#   $manpath
-# )
-export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Set the list of directories that Zsh searches for programs.
 path=(
