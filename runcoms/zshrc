@@ -12,18 +12,6 @@ fi
 
 # Customize to your needs...
 
-# npm
-if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
-  source "$HOME/.nvm/nvm.sh"
-fi
-
-# chruby
-
-if (( $+commands[chruby-exec] )); then
-  source "${commands[chruby-exec]:h:h}/share/chruby/chruby.sh"
-  chruby 2.1
-fi
-
 # OS X
 
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -34,4 +22,22 @@ if [[ "$OSTYPE" == darwin* ]]; then
   PG_DIR="$BREW_PREFIX/var/postgres"
   alias pg_start="pg_ctl -D $PG_DIR -l $PG_DIR/server.log start"
   alias pg_stop="pg_ctl -D $PG_DIR stop -s -m fast"
+fi
+
+# Python - pip
+
+export PIP_REQUIRE_VIRTUALENV=true
+export PIP_RESPECT_VIRTUALENV=true
+
+# npm
+
+if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
+  source "$HOME/.nvm/nvm.sh"
+fi
+
+# chruby
+
+if (( $+commands[chruby-exec] )); then
+  source "${commands[chruby-exec]:h:h}/share/chruby/chruby.sh"
+  chruby 2.1
 fi
