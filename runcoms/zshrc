@@ -12,7 +12,11 @@ fi
 
 # Customize to your needs...
 
-# OS X
+# Aliases
+
+alias cleanpyc="find . -type f -name '*.pyc' -delete"
+
+# OS specific
 
 if [[ "$OSTYPE" == darwin* ]]; then
   # OS X-specific aliases
