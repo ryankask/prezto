@@ -14,8 +14,6 @@ fi
 
 # Aliases
 
-alias cleanpyc="find . -type f -name '*.pyc' -delete"
-
 # OS specific
 
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -28,7 +26,13 @@ if [[ "$OSTYPE" == darwin* ]]; then
   alias pg_stop="pg_ctl -D $PG_DIR stop -s -m fast"
 fi
 
-# Python - pip
+# Python
+
+function pyclean() {
+    ZSH_PYCLEAN_PLACES=${*:-'.'}
+    find ${ZSH_PYCLEAN_PLACES} -type f -name "*.py[co]" -delete
+    find ${ZSH_PYCLEAN_PLACES} -type d -name "__pycache__" -delete
+}
 
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
