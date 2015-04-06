@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+# -*- mode: sh; -*-
+
+git submodule foreach git reset --hard
+git submodule update --init --recursive
