@@ -24,6 +24,9 @@ if [[ "$OSTYPE" == darwin* ]]; then
   PG_DIR="$BREW_PREFIX/var/postgres"
   alias pg_start="pg_ctl -D $PG_DIR -l $PG_DIR/server.log start"
   alias pg_stop="pg_ctl -D $PG_DIR stop -s -m fast"
+
+  # Android
+  export ANDROID_HOME="$BREW_PREFIX/opt/android-sdk"
 fi
 
 # Python
