@@ -32,7 +32,6 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'fasd' \
-  'python' \
   'history-substring-search' \
   'prompt'
 

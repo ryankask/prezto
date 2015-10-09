@@ -31,6 +31,9 @@ fi
 
 # Python
 
+fpath=(${ZDOTDIR:-$HOME}/.zprezto/modules/python/functions $fpath)
+autoload -Uz python-info
+
 function pyclean() {
     ZSH_PYCLEAN_PLACES=${*:-'.'}
     find ${ZSH_PYCLEAN_PLACES} -type f -name "*.py[co]" -delete
@@ -39,6 +42,12 @@ function pyclean() {
 
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
+
+if (( $+commands[virtualenvwrapper.sh] )); then
+  export WORKON_HOME="$HOME/.virtualenvs"
+  VIRTUAL_ENV_DISABLE_PROMPT=1
+  source "$commands[virtualenvwrapper.sh]"
+fi
 
 # npm
 
