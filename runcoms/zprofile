@@ -34,7 +34,7 @@ fi
 #
 
 export GOPATH="$HOME/Projects/go"
-export BREW_PREFIX=$(brew --prefix)
+export BREW_PREFIX="$(brew --prefix)"
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
