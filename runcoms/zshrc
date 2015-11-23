@@ -52,13 +52,6 @@ if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
   source "$HOME/.nvm/nvm.sh"
 fi
 
-# chruby
-
-if (( $+commands[chruby-exec] )); then
-  source "${commands[chruby-exec]:h:h}/share/chruby/chruby.sh"
-  chruby 2.1
-fi
-
 # Load local zshrc
 
 if [[ -s "$HOME/.zshrc.local" ]]; then
