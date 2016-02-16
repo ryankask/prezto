@@ -44,6 +44,7 @@ if (( $+commands[virtualenvwrapper.sh] )); then
   export WORKON_HOME="$HOME/.virtualenvs"
   VIRTUAL_ENV_DISABLE_PROMPT=1
   source "$commands[virtualenvwrapper.sh]"
+  alias wo="workon"
 fi
 
 # npm
