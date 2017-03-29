@@ -35,6 +35,7 @@ fi
 
 export GOPATH="$HOME/Projects/go"
 export BREW_PREFIX="$(brew --prefix)"
+export ANDROID_HOME="/usr/local/Android/sdk"
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
@@ -48,8 +49,8 @@ cdpath=(
 # Set the list of directories that Zsh searches for programs.
 path=(
   $GOPATH/bin
-  $BREW_PREFIX/opt/coreutils/libexec/gnubin
   $HOME/.cabal/bin
+  $BREW_PREFIX/opt/coreutils/libexec/gnubin
   /usr/local/{bin,sbin}
   $path
 )
