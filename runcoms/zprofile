@@ -48,8 +48,8 @@ cdpath=(
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  $HOME/.local/bin
   $GOPATH/bin
-  $HOME/.cabal/bin
   $BREW_PREFIX/opt/coreutils/libexec/gnubin
   /usr/local/{bin,sbin}
   $path
