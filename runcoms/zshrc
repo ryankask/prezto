@@ -65,6 +65,12 @@ if (( $+commands[docker] )); then
   dkrm() { docker rm $(docker ps -a -q); }
 fi
 
+# Misc
+
+if (( $+commands[direnv] )); then
+  eval "$(direnv hook zsh)"
+fi
+
 # Load local zshrc
 
 if [[ -s "$HOME/.zshrc.local" ]]; then
