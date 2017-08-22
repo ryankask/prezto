@@ -58,6 +58,7 @@ fi
 
 if (( $+commands[docker] )); then
   alias dk='docker'
+  alias dkc='docker-compose'
   alias dkps='docker ps'
   alias dkpsa='docker ps -a'
   alias dkR='docker run -it --rm'
