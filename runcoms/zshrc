@@ -14,6 +14,8 @@ fi
 
 # Aliases
 
+alias g="git"
+
 # OS specific
 
 if [[ "$OSTYPE" == darwin* ]]; then
