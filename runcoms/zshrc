@@ -43,7 +43,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 if (( $+commands[virtualenvwrapper.sh] )); then
   export WORKON_HOME="$HOME/.virtualenvs"
-  [[ -n $BREW_PREFIX ]] && export VIRTUALENVWRAPPER_PYTHON="$BREW_PREFIX/bin/python2"
+  [[ -n $BREW_PREFIX ]] && export VIRTUALENVWRAPPER_PYTHON="$BREW_PREFIX/bin/python"
   VIRTUAL_ENV_DISABLE_PROMPT=1
   source "$commands[virtualenvwrapper.sh]"
   alias wo="workon"
